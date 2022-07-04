@@ -1,12 +1,13 @@
-import { Formik, Form, Field } from 'formik';
-
+import PropTypes from 'prop-types';
+import { Formik } from 'formik';
+import { Box, Input, InputName, SubmitButton } from './FormContacts.styled';
 export const ContactsReviewForm = ({ submitForm }) => {
   return (
     <Formik initialValues={{ name: '', number: '' }} onSubmit={submitForm}>
-      <Form>
-        <label>
+      <Box>
+        <InputName>
           name
-          <Field
+          <Input
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -14,19 +15,24 @@ export const ContactsReviewForm = ({ submitForm }) => {
             required
             placeholder="full name"
           />
-        </label>
-        <label>
+        </InputName>
+        <InputName>
           phone
-          <Field
+          <Input
             type="tel"
             name="number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
+            placeholder="enter your phone number"
           />
-        </label>
-        <button type="submit">Add contacts</button>
-      </Form>
+        </InputName>
+        <SubmitButton type="submit">Add contacts</SubmitButton>
+      </Box>
     </Formik>
   );
+};
+
+ContactsReviewForm.propTypes = {
+  submitForm: PropTypes.func,
 };

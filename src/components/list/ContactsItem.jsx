@@ -1,12 +1,17 @@
-export const ContactListItem = ({ item }) => {
+import PropTypes from 'prop-types';
+import { ContactsItem, DeleteButton, Text } from './ContactsItem.styled';
+export const ContactListItem = ({ item, deleteContact }) => {
   return (
-    <li>
-      <p>name: {item.name}</p>
-      <p>number: {item.number}</p>
-      {/* <p>number: {item.number}</p>
-      <button type="button" onClick={() => delateContact(item.id)}>
-        Delate <BsTrash />
-      </button> */}
-    </li>
+    <ContactsItem>
+      <Text>Name: {item.name}</Text>
+      <Text>Number: {item.number}</Text>
+      <DeleteButton type="button" onClick={() => deleteContact(item.id)}>
+        Delete
+      </DeleteButton>
+    </ContactsItem>
   );
+};
+ContactListItem.propTypes = {
+  deleteContact: PropTypes.func,
+  item: PropTypes.objectOf(PropTypes.string),
 };
