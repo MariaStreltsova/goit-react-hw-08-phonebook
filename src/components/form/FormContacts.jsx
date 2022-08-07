@@ -3,14 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Formik } from 'formik';
 import { nanoid } from 'nanoid';
 import { Box, Input, InputName, SubmitButton } from './FormContacts.styled';
-// import { getItems } from '../../redux/contactsSelectors';
+import { getItems } from '../../redux/contactsSelectors';
 import { contactsSlice } from '../../redux/myContacts/contactsSlice';
 
 const idName = nanoid();
 const idNumber = nanoid();
 
 export const ContactsReviewForm = () => {
-  const items = useSelector(state => state.contacts.items);
+  const items = useSelector(getItems);
   const dispatch = useDispatch();
   return (
     <Formik
@@ -23,6 +23,7 @@ export const ContactsReviewForm = () => {
           const newPerson = {
             name,
             number,
+            id: nanoid(),
           };
           dispatch(contactsSlice.actions.addContact(newPerson));
         }
