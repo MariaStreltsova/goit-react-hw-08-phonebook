@@ -1,7 +1,7 @@
-import { useState, useEffect, useMemo } from 'react';
-import { nanoid } from 'nanoid';
+import { useState, useEffect } from 'react';
+
 import { ContactsReviewForm } from './form/FormContacts';
-import ContactList from './list/ContactsList';
+import { ContactList } from './list/ContactsList';
 import { Filter } from './filter/Filter';
 import { Container, Title } from './App.styled';
 
@@ -12,54 +12,54 @@ export default function App() {
     { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
     { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
   ];
-  const [contacts, setContacts] = useState(() => {
+  const [contacts] = useState(() => {
     return JSON.parse(localStorage.getItem('contacts')) ?? initialContacts;
   });
-  const [filter, setFilter] = useState('');
+  // const [filter, setFilter] = useState('');
 
   useEffect(() => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
-  const submitForm = ({ name, number }, { resetForm }) => {
-    const contactsNames = contacts.map(contact => contact.name);
-    if (contactsNames.includes(name)) {
-      alert(` ${name} is already in contacts.`);
-    } else {
-      const person = {
-        id: nanoid(),
-        name,
-        number,
-      };
-      setContacts(prevState => [...prevState, person]);
-      resetForm();
-    }
-  };
+  // const submitForm = ({ name, number }, { resetForm }) => {
+  //   const contactsNames = contacts.map(contact => contact.name);
+  //   if (contactsNames.includes(name)) {
+  //     alert(` ${name} is already in contacts.`);
+  //   } else {
+  //     const person = {
+  //       id: nanoid(),
+  //       name,
+  //       number,
+  //     };
+  //     setContacts(prevState => [...prevState, person]);
+  //     resetForm();
+  //   }
+  // };
   // const oldContact = this.state.contacts.find(
   //   person => person.name.toLowerCase() === values.name.toLowerCase()
   // );
 
-  const onFilter = evt => {
-    setFilter(evt.target.value);
-  };
+  // const onFilter = evt => {
+  //   setFilter(evt.target.value);
+  // };
 
-  const onDelete = id => {
-    setContacts(prevState => {
-      return prevState.filter(c => c.id !== id);
-    });
-  };
+  // const onDelete = id => {
+  //   setContacts(prevState => {
+  //     return prevState.filter(c => c.id !== id);
+  //   });
+  // };
 
-  const newContacts = useMemo(() => {
-    return contacts.filter(person =>
-      person.name.toLowerCase().includes(filter.toLowerCase())
-    );
-  }, [contacts, filter]);
+  // const newContacts = useMemo(() => {
+  //   return contacts.filter(person =>
+  //     person.name.toLowerCase().includes(filter.toLowerCase())
+  //   );
+  // }, [contacts, filter]);
   return (
     <Container>
       <Title>Phonebook</Title>
-      <ContactsReviewForm submitForm={submitForm} />
-      <Filter onFilter={onFilter} filter={filter} />
-      <ContactList contactsInfo={newContacts} deleteContact={onDelete} />
+      <ContactsReviewForm />
+      <Filter />
+      <ContactList />
     </Container>
   );
 }

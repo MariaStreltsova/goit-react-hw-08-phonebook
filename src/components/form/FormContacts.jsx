@@ -1,9 +1,34 @@
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
+import { nanoid } from 'nanoid';
 import { Box, Input, InputName, SubmitButton } from './FormContacts.styled';
-export const ContactsReviewForm = ({ submitForm }) => {
+import { getItems } from '../../redux/contactsSelectors';
+import { contactsSlice } from '../../redux/myContacts/contactsSlice';
+
+const idName = nanoid();
+const idNumber = nanoid();
+
+export const ContactsReviewForm = () => {
+  const items = useSelector(getItems);
+  const dispatch = useDispatch();
   return (
-    <Formik initialValues={{ name: '', number: '' }} onSubmit={submitForm}>
+    <Formik
+      initialValues={{ name: '', number: '' }}
+      onSubmit={({ name, number }, { resetForm }) => {
+        const contactsNames = items.map(item => item.name);
+        if (contactsNames.includes(name)) {
+          alert(` ${name} is already in contacts.`);
+        } else {
+          const newPerson = {
+            name,
+            number,
+          };
+          dispatch(contactsSlice.actions.addContact(newPerson));
+        }
+        resetForm();
+      }}
+    >
       <Box>
         <InputName>
           name
@@ -14,6 +39,7 @@ export const ContactsReviewForm = ({ submitForm }) => {
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
+            id={idName}
             placeholder="enter new contacts' name"
           />
         </InputName>
@@ -26,6 +52,7 @@ export const ContactsReviewForm = ({ submitForm }) => {
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
+            id={idNumber}
             placeholder="enter new contacts' phone number"
           />
         </InputName>
