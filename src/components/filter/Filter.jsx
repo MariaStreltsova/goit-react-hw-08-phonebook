@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
 import { FilterContainer, FilterInput } from './Filter.styled';
 
-import { getFilter } from '../../redux/contactsSelectors';
+// import { getFilter } from '../../redux/contactsSelectors';
 import { contactsSlice } from '../../redux/myContacts/contactsSlice';
 const filterId = nanoid();
 
 export const Filter = () => {
-  const value = useSelector(getFilter);
+  const value = useSelector(state => state.contacts.filter);
   const dispatch = useDispatch();
   return (
     <FilterContainer>

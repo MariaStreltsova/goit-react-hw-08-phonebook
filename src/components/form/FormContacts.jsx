@@ -1,16 +1,16 @@
 import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { nanoid } from 'nanoid';
 import { Box, Input, InputName, SubmitButton } from './FormContacts.styled';
-import { getItems } from '../../redux/contactsSelectors';
+// import { getItems } from '../../redux/contactsSelectors';
 import { contactsSlice } from '../../redux/myContacts/contactsSlice';
 
 const idName = nanoid();
 const idNumber = nanoid();
 
 export const ContactsReviewForm = () => {
-  const items = useSelector(getItems);
+  const items = useSelector(state => state.contacts.items);
   const dispatch = useDispatch();
   return (
     <Formik
@@ -62,6 +62,6 @@ export const ContactsReviewForm = () => {
   );
 };
 
-ContactsReviewForm.propTypes = {
-  submitForm: PropTypes.func,
-};
+// ContactsReviewForm.propTypes = {
+//   submitForm: PropTypes.func,
+// };
