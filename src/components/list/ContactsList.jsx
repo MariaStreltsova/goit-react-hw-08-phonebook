@@ -7,7 +7,7 @@ import { ContactsItem, DeleteButton, Text } from './ContactsItem.styled';
 import { contactsSlice } from '../../redux/myContacts/contactsSlice';
 
 export const ContactList = () => {
-  const contacts = useSelector(getVisibleContacts);
+  const contacts = useSelector(state => state.contacts.items);
   const dispatch = useDispatch();
   return (
     <div>
