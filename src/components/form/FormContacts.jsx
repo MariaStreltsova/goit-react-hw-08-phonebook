@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-// import PropTypes from 'prop-types';
+
 import { Formik } from 'formik';
 import { nanoid } from 'nanoid';
 import { Box, Input, InputName, SubmitButton } from './FormContacts.styled';
@@ -61,7 +61,3 @@ export const ContactsReviewForm = () => {
     </Formik>
   );
 };
-
-// ContactsReviewForm.propTypes = {
-//   submitForm: PropTypes.func,
-// };

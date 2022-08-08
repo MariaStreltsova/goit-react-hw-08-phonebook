@@ -13,9 +13,9 @@ export const itemsSlice = createSlice({
         return { payload: { name, number, id } };
       },
     },
-  },
-  deleteContact(state, action) {
-    return state.filter(item => item.id !== action.payload);
+    deleteContact(state, action) {
+      return state.filter(item => item.id !== action.payload);
+    },
   },
 });
 

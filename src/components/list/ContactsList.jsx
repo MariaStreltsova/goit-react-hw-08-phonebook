@@ -8,6 +8,7 @@ import { itemsSlice } from '../../redux/myContacts/contactsSlice';
 
 export const ContactList = () => {
   const items = useSelector(getVisibleContacts);
+  console.log(items);
   const dispatch = useDispatch();
   return (
     <div>
@@ -21,8 +22,8 @@ export const ContactList = () => {
               <DeleteButton
                 type="button"
                 id={id}
-                onClick={e =>
-                  dispatch(itemsSlice.actions.deleteContact(e.target.id))
+                onClick={evt =>
+                  dispatch(itemsSlice.actions.deleteContact(evt.target.id))
                 }
               >
                 Delete

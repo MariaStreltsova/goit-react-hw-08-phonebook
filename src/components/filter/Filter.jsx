@@ -8,7 +8,7 @@ import { filterSlice } from '../../redux/myContacts/contactsSlice';
 const filterId = nanoid();
 
 export const Filter = () => {
-  const value = useSelector(getFilter); // попробовать с getvisiblecontscts Сравнить с фильтром в APP
+  const value = useSelector(getFilter);
   const dispatch = useDispatch();
   return (
     <FilterContainer>
