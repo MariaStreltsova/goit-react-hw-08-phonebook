@@ -4,7 +4,7 @@ import { Formik } from 'formik';
 import { nanoid } from 'nanoid';
 import { Box, Input, InputName, SubmitButton } from './FormContacts.styled';
 import { getItems } from '../../redux/contactsSelectors';
-import { contactsSlice } from '../../redux/myContacts/contactsSlice';
+import { itemsSlice } from '../../redux/myContacts/contactsSlice';
 
 const idName = nanoid();
 const idNumber = nanoid();
@@ -23,9 +23,8 @@ export const ContactsReviewForm = () => {
           const newPerson = {
             name,
             number,
-            id: nanoid(),
           };
-          dispatch(contactsSlice.actions.addContact(newPerson));
+          dispatch(itemsSlice.actions.addContact(newPerson));
         }
         resetForm();
       }}

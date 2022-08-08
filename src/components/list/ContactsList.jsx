@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { ContactsTitle, List } from './ContactsList.styled';
 import { getVisibleContacts } from '../../redux/contactsSelectors';
 import { ContactsItem, DeleteButton, Text } from './ContactsItem.styled';
-import { deleteContact } from '../../redux/myContacts/contactsSlice';
+import { itemsSlice } from '../../redux/myContacts/contactsSlice';
 
 export const ContactList = () => {
   const items = useSelector(getVisibleContacts);
@@ -21,7 +21,9 @@ export const ContactList = () => {
               <DeleteButton
                 type="button"
                 id={id}
-                onClick={e => dispatch(deleteContact(e.target.id))}
+                onClick={e =>
+                  dispatch(itemsSlice.actions.deleteContact(e.target.id))
+                }
               >
                 Delete
               </DeleteButton>

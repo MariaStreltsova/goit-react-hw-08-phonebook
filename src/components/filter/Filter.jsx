@@ -4,11 +4,11 @@ import { nanoid } from 'nanoid';
 import { FilterContainer, FilterInput } from './Filter.styled';
 
 import { getFilter } from '../../redux/contactsSelectors';
-import { changeFilter } from '../../redux/myContacts/contactsSlice';
+import { filterSlice } from '../../redux/myContacts/contactsSlice';
 const filterId = nanoid();
 
 export const Filter = () => {
-  const value = useSelector(getFilter);
+  const value = useSelector(getFilter); // попробовать с getvisiblecontscts Сравнить с фильтром в APP
   const dispatch = useDispatch();
   return (
     <FilterContainer>
@@ -17,7 +17,9 @@ export const Filter = () => {
         type="text"
         name="filter"
         value={value}
-        onChange={e => dispatch(changeFilter(e.target.value))}
+        onChange={e =>
+          dispatch(filterSlice.actions.changeFilter(e.target.value))
+        }
         id={filterId}
         placeholder="enter contacts' name"
       />
