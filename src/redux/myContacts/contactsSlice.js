@@ -1,5 +1,6 @@
 import { createSlice, combineReducers } from '@reduxjs/toolkit';
 import { nanoid } from 'nanoid';
+
 export const itemsSlice = createSlice({
   name: 'items',
   initialState: [],

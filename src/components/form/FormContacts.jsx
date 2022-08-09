@@ -12,23 +12,23 @@ const idNumber = nanoid();
 export const ContactsReviewForm = () => {
   const items = useSelector(getItems);
   const dispatch = useDispatch();
+
+  const handleSubmit = ({ name, number }, { resetForm }) => {
+    const contactsNames = items.map(item => item.name);
+    if (contactsNames.includes(name)) {
+      alert(` ${name} is already in contacts.`);
+    } else {
+      const newPerson = {
+        name,
+        number,
+      };
+      dispatch(itemsSlice.actions.addContact(newPerson));
+    }
+    resetForm();
+  };
+
   return (
-    <Formik
-      initialValues={{ name: '', number: '' }}
-      onSubmit={({ name, number }, { resetForm }) => {
-        const contactsNames = items.map(item => item.name);
-        if (contactsNames.includes(name)) {
-          alert(` ${name} is already in contacts.`);
-        } else {
-          const newPerson = {
-            name,
-            number,
-          };
-          dispatch(itemsSlice.actions.addContact(newPerson));
-        }
-        resetForm();
-      }}
-    >
+    <Formik initialValues={{ name: '', number: '' }} onSubmit={handleSubmit}>
       <Box>
         <InputName>
           name

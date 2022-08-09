@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-// import { ContactListItem } from './ContactsItem';
 import { ContactsTitle, List } from './ContactsList.styled';
 import { getVisibleContacts } from '../../redux/contactsSelectors';
 import { ContactsItem, DeleteButton, Text } from './ContactsItem.styled';
@@ -8,7 +7,6 @@ import { itemsSlice } from '../../redux/myContacts/contactsSlice';
 
 export const ContactList = () => {
   const items = useSelector(getVisibleContacts);
-  console.log(items);
   const dispatch = useDispatch();
   return (
     <div>
