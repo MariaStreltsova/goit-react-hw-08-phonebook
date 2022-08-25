@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Formik } from 'formik';
 import { nanoid } from 'nanoid';
 import { Box, Input, InputName, SubmitButton } from './FormContacts.styled';
-import { getItems } from '../../redux/contactsSelectors';
+import { getItems } from '../../redux/myContacts/contactsSelectors';
 import { itemsSlice } from '../../redux/myContacts/contactsSlice';
 
 const idName = nanoid();

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { ContactsTitle, List } from './ContactsList.styled';
-import { getVisibleContacts } from '../../redux/contactsSelectors';
+import { getVisibleContacts } from '../../redux/myContacts/contactsSelectors';
 import { ContactsItem, DeleteButton, Text } from './ContactsItem.styled';
 import { itemsSlice } from '../../redux/myContacts/contactsSlice';
 

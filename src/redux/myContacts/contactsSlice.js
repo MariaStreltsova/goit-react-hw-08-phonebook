@@ -1,22 +1,61 @@
 import { createSlice, combineReducers } from '@reduxjs/toolkit';
-import { nanoid } from 'nanoid';
+import { fetchContacts, deleteContact, addContact } from './contactsOperations';
 
+const initialState = {
+  items: [],
+  isLoading: false,
+  error: null,
+};
 export const itemsSlice = createSlice({
   name: 'items',
-  initialState: [],
-  reducers: {
-    addContact: {
-      reducer: (state, action) => {
-        state.push(action.payload);
-      },
-      prepare: ({ name, number }) => {
-        const id = nanoid();
-        return { payload: { name, number, id } };
-      },
+  initialState,
+  extrareducers: {
+    [fetchContacts.pending]: state => {
+      state.isLoading = true;
     },
-    deleteContact(state, action) {
-      return state.filter(item => item.id !== action.payload);
+    [fetchContacts.fulfilled]: (state, action) => {
+      state.items = action.payload;
+      state.isLoading = false;
     },
+    [fetchContacts.rejected]: (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
+
+    [addContact.pending]: state => {
+      state.isLoading = true;
+    },
+    [addContact.fulfilled]: (state, action) => {
+      state.items.push(action.payload);
+      state.isLoading = false;
+    },
+    [addContact.rejected]: (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
+    [deleteContact.pending]: state => {
+      state.isLoading = true;
+    },
+    [deleteContact.fulfilled]: (state, action) => {
+      state.items = state.items.filter(item => item.id !== action.payload);
+      state.isLoading = false;
+    },
+    [deleteContact.rejected]: (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
+    // addContact: {
+    //   reducer: (state, action) => {
+    //     state.push(action.payload);
+    //   },
+    //   prepare: ({ name, number }) => {
+    //     const id = nanoid();
+    //     return { payload: { name, number, id } };
+    //   },
+    // },
+    // deleteContact(state, action) {
+    //   return state.filter(item => item.id !== action.payload);
+    // },
   },
 });
 
