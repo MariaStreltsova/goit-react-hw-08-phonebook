@@ -1,6 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import { SharedLayout } from './layout/SharedLayout';
 import { HomePage } from 'pages/HomePage';
+import LoginPage from 'pages/auth-pages/LoginPage';
+import RegisterPage from 'pages/auth-pages/RegisterPage';
 // import { ContactsReviewForm } from './form/FormContacts';
 // import { ContactList } from './list/ContactsList';
 // import { Filter } from './filter/Filter';
@@ -12,8 +14,8 @@ export default function App() {
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<HomePage />} />
         <Route path="contacts" element={<div>ContactsPage</div>} />
-        <Route path="register" element={<div>RegisterPage</div>} />
-        <Route path="login" element={<div>LoginPage</div>} />
+        <Route path="register" element={<RegisterPage />} />
+        <Route path="login" element={<LoginPage />} />
       </Route>
       <Route path="*" element={<HomePage />} />
     </Routes>
