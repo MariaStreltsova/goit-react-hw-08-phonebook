@@ -31,7 +31,7 @@ const contactsPersistConfig = {
 export const store = configureStore({
   reducer: {
     auth: persistReducer(contactsPersistConfig, authSlice.reducer),
-    contacts: contactsReducer,
+    phonebook: contactsReducer,
   },
 
   middleware,

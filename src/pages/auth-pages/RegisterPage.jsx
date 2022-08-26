@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
+import { getIsLoggedIn } from 'redux/auth/auth-selectors';
 import { register } from '../../redux/auth/auth-operations';
 
 const styles = {
@@ -18,6 +20,7 @@ export default function RegisterPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const isLoggedIn = useSelector(getIsLoggedIn);
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -39,39 +42,50 @@ export default function RegisterPage() {
     setEmail('');
     setPassword('');
   };
-  console.log(dispatch);
+
   return (
-    <div>
-      <h1>Registration</h1>
+    <>
+      {isLoggedIn ? (
+        <Navigate to="/contacts" replace={true} />
+      ) : (
+        <div>
+          <h1>Registration</h1>
 
-      <form onSubmit={handleSubmit} style={styles.form}>
-        <label style={styles.label}>
-          Name
-          <input type="text" name="name" value={name} onChange={handleChange} />
-        </label>
+          <form onSubmit={handleSubmit} style={styles.form}>
+            <label style={styles.label}>
+              Name
+              <input
+                type="text"
+                name="name"
+                value={name}
+                onChange={handleChange}
+              />
+            </label>
 
-        <label style={styles.label}>
-          Email
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-          />
-        </label>
+            <label style={styles.label}>
+              Email
+              <input
+                type="email"
+                name="email"
+                value={email}
+                onChange={handleChange}
+              />
+            </label>
 
-        <label style={styles.label}>
-          Password
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
+            <label style={styles.label}>
+              Password
+              <input
+                type="password"
+                name="password"
+                value={password}
+                onChange={handleChange}
+              />
+            </label>
 
-        <button type="submit">Sign up</button>
-      </form>
-    </div>
+            <button type="submit">Sign up</button>
+          </form>
+        </div>
+      )}
+    </>
   );
 }

@@ -4,17 +4,18 @@ import { Formik } from 'formik';
 import { nanoid } from 'nanoid';
 import { Box, Input, InputName, SubmitButton } from './FormContacts.styled';
 import { getItems } from '../../redux/myContacts/contactsSelectors';
-import { itemsSlice } from '../../redux/myContacts/contactsSlice';
+import { addContact } from 'redux/myContacts/contactsOperations';
 
 const idName = nanoid();
 const idNumber = nanoid();
 
 export const ContactsReviewForm = () => {
-  const items = useSelector(getItems);
+  const contacts = useSelector(getItems);
   const dispatch = useDispatch();
 
   const handleSubmit = ({ name, number }, { resetForm }) => {
-    const contactsNames = items.map(item => item.name);
+    const contactsNames = contacts.map(contact => contact.name);
+
     if (contactsNames.includes(name)) {
       alert(` ${name} is already in contacts.`);
     } else {
@@ -22,7 +23,7 @@ export const ContactsReviewForm = () => {
         name,
         number,
       };
-      dispatch(itemsSlice.actions.addContact(newPerson));
+      dispatch(addContact(newPerson));
     }
     resetForm();
   };

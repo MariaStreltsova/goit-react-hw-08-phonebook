@@ -1,11 +1,12 @@
-export const getItems = state => state.contacts.items;
-export const getFilter = state => state.contacts.filter;
+export const getItems = state => state.phonebook.items.contacts;
+export const getIsLoading = state => state.phonebook.items.isLoading;
+export const getFilter = state => state.phonebook.filter.value;
 
 export const getVisibleContacts = state => {
   const allContacts = getItems(state);
-  const filter = getFilter(state);
+  const contactsFilter = getFilter(state);
 
   return allContacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
+    contact.name.toLowerCase().includes(contactsFilter.toLowerCase())
   );
 };
