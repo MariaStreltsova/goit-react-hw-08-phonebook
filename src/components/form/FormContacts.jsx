@@ -10,11 +10,11 @@ const idName = nanoid();
 const idNumber = nanoid();
 
 export const ContactsReviewForm = () => {
-  const contacts = useSelector(getItems);
+  const items = useSelector(getItems);
   const dispatch = useDispatch();
 
   const handleSubmit = ({ name, number }, { resetForm }) => {
-    const contactsNames = contacts.map(contact => contact.name);
+    const contactsNames = items.map(items => items.name);
 
     if (contactsNames.includes(name)) {
       alert(` ${name} is already in contacts.`);
