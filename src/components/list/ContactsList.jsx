@@ -17,7 +17,7 @@ export const ContactList = () => {
       <List>
         {contacts &&
           contacts.map(({ id, name, number }) => {
-            return <Item key={id} id={id} name={name} number={number} />;
+            return <Item key={id} name={name} number={number} />;
           })}
       </List>
     </div>
