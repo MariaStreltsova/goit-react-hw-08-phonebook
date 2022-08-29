@@ -9,7 +9,7 @@ const initialState = {
 export const itemsSlice = createSlice({
   name: 'items',
   initialState,
-  extrareducers: {
+  extraReducers: {
     [fetchContacts.pending]: state => {
       state.isLoading = true;
     },

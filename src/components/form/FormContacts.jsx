@@ -13,7 +13,7 @@ export const ContactsReviewForm = () => {
   const items = useSelector(getItems);
   const dispatch = useDispatch();
 
-  const handleSubmit = ({ name, number }, { resetForm }) => {
+  const handleSubmit = ({ name, number, id }, { resetForm }) => {
     const contactsNames = items.map(items => items.name);
 
     if (contactsNames.includes(name)) {
@@ -22,6 +22,7 @@ export const ContactsReviewForm = () => {
       const newPerson = {
         name,
         number,
+        id,
       };
       dispatch(addContact(newPerson));
     }
