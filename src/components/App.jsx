@@ -1,4 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import { SharedLayout } from './layout/SharedLayout';
 import { HomePage } from 'pages/HomePage';
 import LoginPage from 'pages/auth-pages/LoginPage';
@@ -9,12 +11,18 @@ import ContactsPage from 'pages/ContactsPage';
 // import { Filter } from './filter/Filter';
 // import { Container, Title } from './App.styled';
 
+import { fetchCurrentUser } from 'redux/auth/auth-operations';
+
 export default function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCurrentUser());
+  }, [dispatch]);
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<HomePage />} />
-        <Route path="contacts" element={<ContactsPage/>} />
+        <Route path="contacts" element={<ContactsPage />} />
         <Route path="register" element={<RegisterPage />} />
         <Route path="login" element={<LoginPage />} />
       </Route>
