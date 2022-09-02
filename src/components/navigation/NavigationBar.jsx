@@ -1,15 +1,25 @@
 import { Logo } from './Logo';
 import { AuthNav } from './Auth';
-import { UserMenu } from './UserMenu';
-import { Container } from './NavigationBarStyled';
-import { useSelector } from 'react-redux';
-import { getIsLoggedIn } from 'redux/auth/auth-selectors';
+import UserMenu from './UserMenu';
+// import { Container } from './NavigationBarStyled';
+import { NavLink } from 'react-router-dom';
+import { useAuth } from 'hooks/useAuth';
+import { Box } from 'components/box';
 export const NavigationBar = () => {
-  const isLoggedIn = useSelector(getIsLoggedIn);
+  const { isLoggedIn } = useAuth();
   return (
-    <Container>
-      <Logo />
+    <Box
+      display="flex"
+      justifyContent="space-between"
+      alignItems="center"
+      borderBottom="normal"
+    >
+      {isLoggedIn ? (
+        <Logo /> && <NavLink to="/contacts">CONTACTS</NavLink>
+      ) : (
+        <Logo />
+      )}
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
-    </Container>
+    </Box>
   );
 };

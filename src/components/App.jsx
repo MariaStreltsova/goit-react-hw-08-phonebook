@@ -9,14 +9,13 @@ import ContactsPage from 'pages/ContactsPage';
 // import { ContactsReviewForm } from './form/FormContacts';
 // import { ContactList } from './list/ContactsList';
 // import { Filter } from './filter/Filter';
-// import { Container, Title } from './App.styled';
 
-import { fetchCurrentUser } from 'redux/auth/auth-operations';
+import authOperations from 'redux/auth/auth-operations';
 
 export default function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchCurrentUser());
+    dispatch(authOperations.fetchCurrentUser());
   }, [dispatch]);
   return (
     <Routes>
@@ -28,11 +27,5 @@ export default function App() {
       </Route>
       <Route path="*" element={<HomePage />} />
     </Routes>
-    // <Container>
-    //   <Title>Phonebook</Title>
-    //   <ContactsReviewForm />
-    //   <Filter />
-    //   <ContactList />
-    // </Container>
   );
 }

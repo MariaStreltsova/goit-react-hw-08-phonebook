@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-import { getIsLoggedIn } from 'redux/auth/auth-selectors';
-import { register } from '../../redux/auth/auth-operations';
+import { useAuth } from '../../hooks/useAuth';
+import { authOperations } from '../../redux/auth';
 
 const styles = {
   form: {
@@ -20,7 +20,7 @@ export default function RegisterPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const isLoggedIn = useSelector(getIsLoggedIn);
+  const { isLoggedIn } = useAuth();
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -37,7 +37,7 @@ export default function RegisterPage() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(register({ name, email, password }));
+    dispatch(authOperations.register({ name, email, password }));
     setName('');
     setEmail('');
     setPassword('');

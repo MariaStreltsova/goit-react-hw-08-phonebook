@@ -46,18 +46,6 @@ export const itemsSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     },
-    // addContact: {
-    //   reducer: (state, action) => {
-    //     state.push(action.payload);
-    //   },
-    //   prepare: ({ name, number }) => {
-    //     const id = nanoid();
-    //     return { payload: { name, number, id } };
-    //   },
-    // },
-    // deleteContact(state, action) {
-    //   return state.filter(item => item.id !== action.payload);
-    // },
   },
 });
 
