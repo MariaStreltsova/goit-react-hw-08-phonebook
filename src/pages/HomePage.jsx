@@ -1,11 +1,9 @@
-import Login from '../components/Login';
-// import { ContactsReviewForm } from '../components/form/FormContacts';
+import Login from '../components/login/Login';
+
 export const HomePage = () => {
   return (
     <>
       <Login />
-
-      {/* <ContactsReviewForm /> */}
     </>
   );
 };

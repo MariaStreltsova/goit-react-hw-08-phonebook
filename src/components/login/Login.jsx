@@ -1,8 +1,7 @@
 import { useDispatch } from 'react-redux';
-import authOperations from '../redux/auth/auth-operations';
+import authOperations from '../../redux/auth/auth-operations';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-// import Form from 'react-bootstrap/Form';
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
 const StyledButton = styled(Button)`

@@ -11,7 +11,7 @@
 //     marginBottom: 15,
 //   },
 // };
-import Login from 'components/Login';
+import Login from 'components/login/Login';
 export default function LoginPage() {
   return <Login />;
 }
