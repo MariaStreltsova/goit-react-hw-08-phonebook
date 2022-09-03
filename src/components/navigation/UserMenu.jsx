@@ -6,19 +6,18 @@ import { useAuth } from 'hooks/useAuth';
 import { Box } from 'components/box';
 import defaultAvatar from './defaultAvatar.png';
 
+const Avatar = styled.img`
+  margin-right: 4px;
+`;
+
+const Greeting = styled.span`
+  font-weight: ${p => p.theme.fontWeights.bold};
+  margin-right: ${p => p.theme.space[4]}px; ;
+`;
 const UserMenu = () => {
   const { user } = useAuth();
   const dispatch = useDispatch();
   const avatar = defaultAvatar;
-
-  const Avatar = styled.img`
-    margin-right: 4px;
-  `;
-
-  const Greeting = styled.span`
-    font-weight: ${p => p.theme.fontWeights.bold};
-    margin-right: ${p => p.theme.space[4]}px; ;
-  `;
 
   return (
     <>

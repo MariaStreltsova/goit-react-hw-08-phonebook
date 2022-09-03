@@ -1,10 +1,11 @@
-import { Header } from 'components/header/Header';
-import { ContactsReviewForm } from '../components/form/FormContacts';
+import Login from '../components/Login';
+// import { ContactsReviewForm } from '../components/form/FormContacts';
 export const HomePage = () => {
   return (
     <>
-      <Header />
-      <ContactsReviewForm />
+      <Login />
+
+      {/* <ContactsReviewForm /> */}
     </>
   );
 };
