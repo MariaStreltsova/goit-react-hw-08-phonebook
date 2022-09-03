@@ -2,9 +2,10 @@ import { Logo } from './Logo';
 import { AuthNav } from './Auth';
 import UserMenu from './UserMenu';
 // import { Container } from './NavigationBarStyled';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import { useAuth } from 'hooks/useAuth';
 import { Box } from 'components/box';
+
 export const NavigationBar = () => {
   const { isLoggedIn } = useAuth();
   return (
@@ -14,11 +15,12 @@ export const NavigationBar = () => {
       alignItems="center"
       borderBottom="normal"
     >
-      {isLoggedIn ? (
+      <Logo />
+      {/* {isLoggedIn ? (
         <Logo /> && <NavLink to="/contacts">CONTACTS</NavLink>
       ) : (
         <Logo />
-      )}
+      )} */}
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </Box>
   );
