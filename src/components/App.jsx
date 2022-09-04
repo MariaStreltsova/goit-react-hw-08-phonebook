@@ -12,7 +12,7 @@ import ContactsPage from 'pages/ContactsPage';
 import PublicRoute from './PublicRoute';
 import PrivateRoute from './PrivateRoute';
 import authOperations from 'redux/auth/auth-operations';
-import { Spinner } from './Spinner/Spinner';
+import SpinnerBootstrap from './Spinner/Spinner';
 import { useAuth } from 'hooks/useAuth';
 
 export default function App() {
@@ -24,7 +24,7 @@ export default function App() {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <Spinner />
+    <SpinnerBootstrap />
   ) : (
     <Routes>
       <Route path="/" element={<SharedLayout />}>

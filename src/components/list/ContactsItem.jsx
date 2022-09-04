@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getIsLoading } from '../../redux/myContacts/contactsSelectors';
 import { deleteContact } from 'redux/myContacts/contactsOperations';
 import { ContactsItem, Text } from './ContactsItem.styled';
-import { Spinner } from 'components/Spinner/Spinner';
+import SpinnerBootstrap from 'components/Spinner/Spinner';
 import CloseButton from 'react-bootstrap/CloseButton';
 
 export const Item = ({ id, name, number }) => {
@@ -26,7 +26,9 @@ export const Item = ({ id, name, number }) => {
           }}
           disabled={isLoading}
         >
-          {id === idToDelete && <Spinner loading={isLoading} size={12} />}
+          {id === idToDelete && (
+            <SpinnerBootstrap loading={isLoading} size={12} />
+          )}
         </CloseButton>
       </ContactsItem>
     </>
