@@ -21,7 +21,6 @@ export const Filter = () => {
           dispatch(filterSlice.actions.changeFilter(e.target.value))
         }
         id={filterId}
-        placeholder="enter contacts' name"
       />
     </FilterContainer>
   );

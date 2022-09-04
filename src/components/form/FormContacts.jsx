@@ -33,7 +33,7 @@ export const ContactsReviewForm = () => {
     <Formik initialValues={{ name: '', number: '' }} onSubmit={handleSubmit}>
       <Box>
         <InputName>
-          name
+          Name
           <Input
             autoComplete="off"
             type="text"
@@ -42,11 +42,11 @@ export const ContactsReviewForm = () => {
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
             id={idName}
-            placeholder="enter new contacts' name"
+            placeholder="John Travolta"
           />
         </InputName>
         <InputName>
-          phone
+          Phone
           <Input
             autoComplete="off"
             type="tel"
@@ -55,10 +55,12 @@ export const ContactsReviewForm = () => {
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
             id={idNumber}
-            placeholder="enter new contacts' phone number"
+            placeholder="+ 373 "
           />
         </InputName>
-        <SubmitButton type="submit">Add contacts</SubmitButton>
+        <SubmitButton type="submit" variant="light">
+          Add new contact
+        </SubmitButton>
       </Box>
     </Formik>
   );

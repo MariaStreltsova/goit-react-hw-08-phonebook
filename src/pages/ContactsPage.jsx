@@ -4,6 +4,14 @@ import { fetchContacts } from 'redux/myContacts/contactsOperations';
 import { getVisibleContacts } from 'redux/myContacts/contactsSelectors';
 import { Filter } from 'components/filter/Filter';
 import { ContactList } from '../components/list/ContactsList';
+import { ContactsReviewForm } from 'components/form/FormContacts';
+import styled from 'styled-components';
+
+const ContactsContainer = styled.div`
+  height: 699px;
+  display: flex;
+  justify-content: space-around;
+`;
 
 const ContactsPage = () => {
   const contacts = useSelector(getVisibleContacts);
@@ -11,16 +19,25 @@ const ContactsPage = () => {
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
-  if (contacts.length !== 0) {
-    return (
-      <>
-        <Filter />
-        <ContactList />
-      </>
-    );
-  } else {
-    return <p>You can add your first contact!</p>;
-  }
+
+  return (
+    <>
+      {contacts.length !== 0 ? (
+        <ContactsContainer>
+          <ContactsReviewForm />{' '}
+          <div>
+            <Filter />
+            <ContactList />{' '}
+          </div>
+        </ContactsContainer>
+      ) : (
+        <ContactsContainer>
+          {' '}
+          <ContactsReviewForm />
+        </ContactsContainer>
+      )}
+    </>
+  );
 };
 
 export default ContactsPage;

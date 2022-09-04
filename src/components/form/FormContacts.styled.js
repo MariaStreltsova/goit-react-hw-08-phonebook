@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 import { Field, Form } from 'formik';
-
+import Button from 'react-bootstrap/Button';
 export const Box = styled(Form)`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding-left: ${p => p.theme.space[3]}px;
 `;
 
 export const Input = styled(Field)`
@@ -26,20 +24,12 @@ export const InputName = styled.label`
   color: ${p => p.theme.colors.accentText};
 `;
 
-export const SubmitButton = styled.button`
-  margin-top: ${p => p.theme.space[3]}px;
+export const SubmitButton = styled(Button)`
   display: flex;
   justify-content: center;
   width: 140px;
-  margin-top: ${p => p.theme.space[4]}px;
   padding: ${p => p.theme.space[2]}px;
-  color: ${p => p.theme.colors.accentText};
-  background-color: ${p => p.theme.colors.white};
-  border: ${p => p.theme.borders.normal};
-  border-radius: ${p => p.theme.radii.normal};
-  :hover,
-  :focus {
-    color: white;
-    background-color: ${p => p.theme.colors.accentText};
-  }
+  margin-top: ${p => p.theme.space[5]}px;
+  margin-bottom: ${p => p.theme.space[4]}px;
+  margin-left: ${p => p.theme.space[5]}px;
 `;

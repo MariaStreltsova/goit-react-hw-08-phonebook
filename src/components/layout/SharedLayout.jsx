@@ -5,7 +5,7 @@ import { GlobalStyle } from 'components/globalStyle';
 import styled from 'styled-components';
 
 const BackgroundContainer = styled.div`
-  background-image: url(https://ltdfoto.ru/images/2022/09/03/other-bloknot-ruchka-kniga-127240.jpg);
+  background-image: url(https://mobimg.b-cdn.net/v3/fetch/fe/fe60b47090e616a0f7a60666f96c62f0.jpeg?w=1470&r=0.5625);
   background-position: top, right;
   background-size: cover;
   background-repeat: no-repeat;

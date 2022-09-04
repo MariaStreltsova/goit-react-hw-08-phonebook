@@ -5,13 +5,14 @@ import {
   getVisibleContacts,
   // getIsLoading,
 } from '../../redux/myContacts/contactsSelectors';
+import { ContactsListContainer } from './ContactsList.styled';
 
 import { Item } from './ContactsItem';
 export const ContactList = () => {
   const contacts = useSelector(getVisibleContacts);
   // const isLoading = useSelector(getIsLoading);
   return (
-    <div>
+    <ContactsListContainer>
       <ContactsTitle>Contacts list</ContactsTitle>
 
       <List>
@@ -20,7 +21,7 @@ export const ContactList = () => {
             return <Item key={id} id={id} name={name} number={number} />;
           })}
       </List>
-    </div>
+    </ContactsListContainer>
   );
 };
 

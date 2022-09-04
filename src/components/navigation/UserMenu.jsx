@@ -12,7 +12,8 @@ const Avatar = styled.img`
 
 const Greeting = styled.span`
   font-weight: ${p => p.theme.fontWeights.bold};
-  margin-right: ${p => p.theme.space[4]}px; ;
+  margin-right: ${p => p.theme.space[4]}px;
+  color: ${p => p.theme.colors.accentText};
 `;
 const UserMenu = () => {
   const { user } = useAuth();
