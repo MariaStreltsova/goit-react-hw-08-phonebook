@@ -28,7 +28,16 @@ export default function App() {
   ) : (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
-        <Route index element={<PublicRoute component={<HomePage />} />} />
+        <Route
+          index
+          element={
+            <PublicRoute
+              restricted
+              redirectTo="/contacts"
+              component={<HomePage />}
+            />
+          }
+        />
         <Route
           path="/register"
           element={
