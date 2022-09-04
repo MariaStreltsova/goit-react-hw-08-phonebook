@@ -5,12 +5,7 @@ import { GlobalStyle } from 'components/globalStyle';
 import styled from 'styled-components';
 
 const BackgroundContainer = styled.div`
-  background-image: linear-gradient(
-      to top,
-      rgba(213, 213, 224, 0.6),
-      rgba(213, 213, 224, 0.6)
-    ),
-    url(https://mobimg.b-cdn.net/v3/fetch/9a/9a9783f4e5c344ec478b3472711498cf.jpeg?w=600&r=0.5625);
+  background-image: url(https://ltdfoto.ru/images/2022/09/03/other-bloknot-ruchka-kniga-127240.jpg);
   background-position: top, right;
   background-size: cover;
   background-repeat: no-repeat;
