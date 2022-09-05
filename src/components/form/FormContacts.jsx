@@ -2,7 +2,14 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { Formik } from 'formik';
 import { nanoid } from 'nanoid';
-import { Box, Input, InputName, SubmitButton } from './FormContacts.styled';
+
+import {
+  Box,
+  Input,
+  InputName,
+  SubmitButton,
+  Heading,
+} from './FormContacts.styled';
 import { getItems } from '../../redux/myContacts/contactsSelectors';
 import { addContact } from 'redux/myContacts/contactsOperations';
 
@@ -32,9 +39,9 @@ export const ContactsReviewForm = () => {
   return (
     <Formik initialValues={{ name: '', number: '' }} onSubmit={handleSubmit}>
       <Box>
-        <h2>Add new contact</h2>
+        <Heading>Add new contact</Heading>
         <InputName>
-          Name{' '}
+          Name
           <Input
             autoComplete="off"
             type="text"

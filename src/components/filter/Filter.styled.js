@@ -4,7 +4,7 @@ export const FilterContainer = styled.label`
   display: flex;
   flex-direction: column;
 
-  margin-top: ${p => p.theme.space[3]}px;
+  margin-top: 24px;
 
   color: ${p => p.theme.colors.accentText};
 
