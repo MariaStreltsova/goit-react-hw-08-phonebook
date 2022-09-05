@@ -1,11 +1,7 @@
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
-import {
-  FilterContainer,
-  FilterInput,
-  FilterInputContainer,
-} from './Filter.styled';
+import { FilterContainer, FilterInput } from './Filter.styled';
 
 import { getFilter } from '../../redux/myContacts/contactsSelectors';
 import { filterSlice } from '../../redux/myContacts/contactsSlice';
@@ -17,17 +13,16 @@ export const Filter = () => {
   return (
     <FilterContainer>
       <label> Find contacts by name </label>
-      <FilterInputContainer>
-        <FilterInput
-          type="text"
-          name="filter"
-          value={value}
-          onChange={e =>
-            dispatch(filterSlice.actions.changeFilter(e.target.value))
-          }
-          id={filterId}
-        />
-      </FilterInputContainer>
+
+      <FilterInput
+        type="text"
+        name="filter"
+        value={value}
+        onChange={e =>
+          dispatch(filterSlice.actions.changeFilter(e.target.value))
+        }
+        id={filterId}
+      />
     </FilterContainer>
   );
 };

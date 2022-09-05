@@ -7,7 +7,8 @@ const Link = styled(NavLink)`
   text-decoration: none;
   padding: 12px;
   font-weight: 700;
-  color: ${p => p.theme.colors.accentText};
+  color: ${p => p.theme.colors.white};
+  text-shadow: 2px 4px rgba(0, 0, 0, 0.75);
   &.active {
     color: ${p => p.theme.colors.white};
   }
@@ -16,7 +17,7 @@ const Link = styled(NavLink)`
 export const Logo = () => {
   const { isLoggedIn } = useAuth();
 
-  return <div>{isLoggedIn && <Link to="/contacts">Contacts</Link>}</div>;
+  return <div>{isLoggedIn && <Link to="/contacts">PhoneBook</Link>}</div>;
 };
 /* : (
         <Link to="/">PhoneBook</Link>

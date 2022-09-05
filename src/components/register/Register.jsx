@@ -18,19 +18,13 @@ const Form = styled.form`
 `;
 const Input = styled.input`
   width: 250px;
+  border-radius: ${p => p.theme.radii.normal};
 `;
 const Label = styled.label`
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
   color: ${p => p.theme.colors.accentText};
-`;
-export const InputContainer = styled.div`
-  background-color: ${p => p.theme.colors.accentText};
-  padding: ${p => p.theme.space[3]}px;
-  padding-left: ${p => p.theme.space[4]}px;
-  padding-right: ${p => p.theme.space[5]}px;
-  border-radius: ${p => p.theme.radii.normal};
 `;
 
 export default function Register() {
@@ -66,38 +60,32 @@ export default function Register() {
         <Form onSubmit={handleSubmit}>
           <Label>
             Name{' '}
-            <InputContainer>
-              <Input
-                type="text"
-                name="name"
-                value={name}
-                onChange={handleChange}
-              />
-            </InputContainer>
+            <Input
+              type="text"
+              name="name"
+              value={name}
+              onChange={handleChange}
+            />
           </Label>
 
           <Label>
             Email
-            <InputContainer>
-              <Input
-                type="email"
-                name="email"
-                value={email}
-                onChange={handleChange}
-              />
-            </InputContainer>
+            <Input
+              type="email"
+              name="email"
+              value={email}
+              onChange={handleChange}
+            />
           </Label>
 
           <Label>
             Password
-            <InputContainer>
-              <Input
-                type="password"
-                name="password"
-                value={password}
-                onChange={handleChange}
-              />
-            </InputContainer>
+            <Input
+              type="password"
+              name="password"
+              value={password}
+              onChange={handleChange}
+            />
           </Label>
 
           <SignUpBtn type="submit" variant="info">

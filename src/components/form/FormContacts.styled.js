@@ -4,13 +4,10 @@ import Button from 'react-bootstrap/Button';
 export const Box = styled(Form)`
   display: flex;
   flex-direction: column;
-`;
-
-export const InputContainer = styled.div`
-  background-color: ${p => p.theme.colors.accentText};
-  padding: ${p => p.theme.space[3]}px;
-  padding-left: ${p => p.theme.space[4]}px;
-  padding-right: ${p => p.theme.space[5]}px;
+  background-color: rgba(217, 217, 217, 0.27);
+  height: 300px;
+  padding: ${p => p.theme.space[4]}px;
+  margin-top: 32px;
   border-radius: ${p => p.theme.radii.normal};
 `;
 
@@ -19,7 +16,7 @@ export const Input = styled(Field)`
   margin-top: ${p => p.theme.space[2]}px;
   padding: ${p => p.theme.space[2]}px;
   border-radius: ${p => p.theme.radii.normal};
-  border: transparent;
+  border: ${p => p.theme.borders.normal};
 
   /* :hover,
   :focus {
@@ -30,7 +27,7 @@ export const InputName = styled.label`
   display: flex;
   flex-direction: column;
   margin-top: ${p => p.theme.space[2]}px;
-  color: ${p => p.theme.colors.accentText};
+  color: ${p => p.theme.colors.black};
 `;
 
 export const SubmitButton = styled(Button)`
@@ -40,5 +37,6 @@ export const SubmitButton = styled(Button)`
   padding: ${p => p.theme.space[3]}px;
   margin-top: ${p => p.theme.space[5]}px;
   margin-bottom: ${p => p.theme.space[4]}px;
-  margin-left: ${p => p.theme.space[6]}px;
+  margin-left: auto;
+  margin-right: auto;
 `;

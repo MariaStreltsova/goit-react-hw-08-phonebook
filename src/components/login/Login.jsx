@@ -16,6 +16,7 @@ const Form = styled.form`
 `;
 const Input = styled.input`
   width: 250px;
+  border-radius: ${p => p.theme.radii.normal};
 `;
 const Label = styled.label`
   display: flex;
@@ -32,18 +33,12 @@ const Link = styled(NavLink)`
 `;
 const Container = styled.div`
   min-height: 504px;
+
 `;
 
 const Greeting = styled.div`
   color: ${p => p.theme.colors.white};
   margin-bottom: ${p => p.theme.space[5]}px;
-`;
-export const InputContainer = styled.div`
-  background-color: ${p => p.theme.colors.accentText};
-  padding: ${p => p.theme.space[3]}px;
-  padding-left: ${p => p.theme.space[4]}px;
-  padding-right: ${p => p.theme.space[5]}px;
-  border-radius: ${p => p.theme.radii.normal};
 `;
 
 export default function Login() {
@@ -79,26 +74,22 @@ export default function Login() {
 
         <Label>
           Email:{' '}
-          <InputContainer>
-            <Input
-              type="email"
-              name="email"
-              value={email}
-              onChange={handleChange}
-            />
-          </InputContainer>
+          <Input
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleChange}
+          />
         </Label>
 
         <Label>
           Password:
-          <InputContainer>
-            <Input
-              type="password"
-              name="password"
-              value={password}
-              onChange={handleChange}
-            />
-          </InputContainer>
+          <Input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handleChange}
+          />
         </Label>
         <StyledButton type="submit" variant="info">
           Log in

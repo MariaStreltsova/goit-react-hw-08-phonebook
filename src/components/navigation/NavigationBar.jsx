@@ -1,5 +1,5 @@
 import { Logo } from './Logo';
-import { AuthNav } from './Auth';
+// import { AuthNav } from './Auth';
 import UserMenu from './UserMenu';
 // import { Container } from './NavigationBarStyled';
 // import { NavLink } from 'react-router-dom';
@@ -16,7 +16,7 @@ export const NavigationBar = () => {
       ) : (
         <Logo />
       )} */}
-      {isLoggedIn ? <UserMenu /> : <AuthNav />}
+      {isLoggedIn && <UserMenu />}
     </Box>
   );
 };
