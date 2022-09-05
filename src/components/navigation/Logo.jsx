@@ -9,8 +9,8 @@ const Link = styled(NavLink)`
   font-weight: 700;
   color: ${p => p.theme.colors.white};
   text-shadow: 2px 4px rgba(0, 0, 0, 0.75);
-  &.active {
-    color: ${p => p.theme.colors.white};
+  :hover {
+    color: ${p => p.theme.colors.accentText};
   }
 `;
 
@@ -19,6 +19,3 @@ export const Logo = () => {
 
   return <div>{isLoggedIn && <Link to="/contacts">PhoneBook</Link>}</div>;
 };
-/* : (
-        <Link to="/">PhoneBook</Link>
-      )} */
