@@ -10,7 +10,7 @@ export const ContactsItem = styled.li`
   justify-content: space-between;
   background-color: ${p => p.theme.colors.white};
   border-radius: ${p => p.theme.radii.normal};
-
+  box-shadow: 4px 4px 34px 4px rgba(255, 255, 255, 0.81);
   & + & {
     margin-top: 10px;
   }

@@ -16,12 +16,23 @@ const Form = styled.form`
   margin-left: 250px;
   margin-top: 200px;
 `;
+const Input = styled.input`
+  width: 250px;
+`;
 const Label = styled.label`
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
   color: ${p => p.theme.colors.accentText};
 `;
+export const InputContainer = styled.div`
+  background-color: ${p => p.theme.colors.accentText};
+  padding: ${p => p.theme.space[3]}px;
+  padding-left: ${p => p.theme.space[4]}px;
+  padding-right: ${p => p.theme.space[5]}px;
+  border-radius: ${p => p.theme.radii.normal};
+`;
+
 export default function Register() {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
@@ -54,33 +65,39 @@ export default function Register() {
       <Container>
         <Form onSubmit={handleSubmit}>
           <Label>
-            Name
-            <input
-              type="text"
-              name="name"
-              value={name}
-              onChange={handleChange}
-            />
+            Name{' '}
+            <InputContainer>
+              <Input
+                type="text"
+                name="name"
+                value={name}
+                onChange={handleChange}
+              />
+            </InputContainer>
           </Label>
 
           <Label>
             Email
-            <input
-              type="email"
-              name="email"
-              value={email}
-              onChange={handleChange}
-            />
+            <InputContainer>
+              <Input
+                type="email"
+                name="email"
+                value={email}
+                onChange={handleChange}
+              />
+            </InputContainer>
           </Label>
 
           <Label>
             Password
-            <input
-              type="password"
-              name="password"
-              value={password}
-              onChange={handleChange}
-            />
+            <InputContainer>
+              <Input
+                type="password"
+                name="password"
+                value={password}
+                onChange={handleChange}
+              />
+            </InputContainer>
           </Label>
 
           <SignUpBtn type="submit" variant="info">

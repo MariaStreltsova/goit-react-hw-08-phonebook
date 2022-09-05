@@ -9,12 +9,7 @@ import { Box } from 'components/box';
 export const NavigationBar = () => {
   const { isLoggedIn } = useAuth();
   return (
-    <Box
-      display="flex"
-      justifyContent="space-between"
-      alignItems="center"
-      borderBottom="normal"
-    >
+    <Box display="flex" justifyContent="space-between" alignItems="center">
       <Logo />
       {/* {isLoggedIn ? (
         <Logo /> && <NavLink to="/contacts">CONTACTS</NavLink>

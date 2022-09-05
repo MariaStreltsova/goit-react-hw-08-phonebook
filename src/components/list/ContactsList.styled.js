@@ -13,4 +13,6 @@ export const List = styled.ul`
 
 export const ContactsListContainer = styled.div`
   display: flex;
+  justify-content: center;
+  margin-top: ${p => p.theme.space[5]}px;
 `;
