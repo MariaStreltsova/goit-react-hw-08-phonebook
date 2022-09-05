@@ -3,6 +3,10 @@ import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
+
+const SignUpBtn = styled(Button)`
+  font-weight: ${p => p.theme.fontWeights.bold}; ;
+`;
 const Container = styled.div`
   min-height: 504px;
 `;
@@ -16,6 +20,7 @@ const Label = styled.label`
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
+  color: ${p => p.theme.colors.accentText};
 `;
 export default function Register() {
   const dispatch = useDispatch();
@@ -78,9 +83,9 @@ export default function Register() {
             />
           </Label>
 
-          <Button type="submit" variant="light">
+          <SignUpBtn type="submit" variant="info">
             Sign up
-          </Button>
+          </SignUpBtn>
         </Form>
       </Container>
       {/* )} */}

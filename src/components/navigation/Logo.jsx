@@ -7,22 +7,17 @@ const Link = styled(NavLink)`
   text-decoration: none;
   padding: 12px;
   font-weight: 700;
-  color: #2a363b;
+  color: ${p => p.theme.colors.accentText};
   &.active {
-    color: #e84a5f;
+    color: ${p => p.theme.colors.white};
   }
 `;
 
 export const Logo = () => {
   const { isLoggedIn } = useAuth();
 
-  return (
-    <div>
-      {isLoggedIn ? (
-        <Link to="/contacts">Contacts</Link>
-      ) : (
-        <Link to="/">PhoneBook</Link>
-      )}
-    </div>
-  );
+  return <div>{isLoggedIn && <Link to="/contacts">Contacts</Link>}</div>;
 };
+/* : (
+        <Link to="/">PhoneBook</Link>
+      )} */

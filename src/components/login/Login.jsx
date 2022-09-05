@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
+
 const StyledButton = styled(Button)`
   margin-right: ${p => p.theme.space[3]}px;
 `;
@@ -17,6 +18,7 @@ const Label = styled.label`
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
+  color: ${p => p.theme.colors.accentText};
 `;
 const Link = styled(NavLink)`
   display: inline-block;
@@ -24,13 +26,16 @@ const Link = styled(NavLink)`
 
   font-weight: 700;
   color: #2a363b;
-  /* &.active {
-     color: #e84a5f;
-   } */
 `;
 const Container = styled.div`
   min-height: 504px;
 `;
+
+const Greeting = styled.div`
+  color: ${p => p.theme.colors.white};
+  margin-bottom: ${p => p.theme.space[5]}px;
+`;
+
 export default function Login() {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
@@ -57,6 +62,11 @@ export default function Login() {
   return (
     <Container>
       <Form onSubmit={handleSubmit}>
+        <Greeting>
+          <h1>WELCOME</h1>
+          <p>to Phonebook</p>
+        </Greeting>
+
         <Label>
           Email:
           <input
@@ -76,7 +86,7 @@ export default function Login() {
             onChange={handleChange}
           />
         </Label>
-        <StyledButton type="submit" variant="light">
+        <StyledButton type="submit" variant="info">
           Log in
         </StyledButton>
         <Button type="button" variant="light">

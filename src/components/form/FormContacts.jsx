@@ -58,7 +58,7 @@ export const ContactsReviewForm = () => {
             placeholder="+ 373 "
           />
         </InputName>
-        <SubmitButton type="submit" variant="light">
+        <SubmitButton type="submit" variant="info">
           Add new contact
         </SubmitButton>
       </Box>

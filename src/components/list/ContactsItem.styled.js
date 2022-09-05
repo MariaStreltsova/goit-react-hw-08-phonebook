@@ -5,6 +5,7 @@ export const ContactsItem = styled.li`
   width: auto;
   height: 40px;
   padding: ${p => p.theme.space[2]}px;
+  padding-right: 0;
   align-items: center;
   justify-content: space-between;
   background-color: ${p => p.theme.colors.white};

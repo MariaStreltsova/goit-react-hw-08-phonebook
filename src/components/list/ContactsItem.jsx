@@ -5,7 +5,7 @@ import { deleteContact } from 'redux/myContacts/contactsOperations';
 import { ContactsItem, Text } from './ContactsItem.styled';
 import SpinnerBootstrap from 'components/Spinner/Spinner';
 import CloseButton from 'react-bootstrap/CloseButton';
-
+import Button from 'react-bootstrap/Button';
 export const Item = ({ id, name, number }) => {
   const dispatch = useDispatch();
   const isLoading = useSelector(getIsLoading);
@@ -17,7 +17,7 @@ export const Item = ({ id, name, number }) => {
       <ContactsItem>
         <Text>Name: {name}</Text>
         <Text>Number: {number}</Text>
-        <CloseButton
+        <Button
           type="button"
           id={id}
           onClick={() => {
@@ -25,11 +25,10 @@ export const Item = ({ id, name, number }) => {
             dispatch(deleteContact(id));
           }}
           disabled={isLoading}
+          variant="light"
         >
-          {id === idToDelete && (
-            <SpinnerBootstrap loading={isLoading} size={12} />
-          )}
-        </CloseButton>
+          {id === idToDelete ? <SpinnerBootstrap /> : <CloseButton />}
+        </Button>
       </ContactsItem>
     </>
   );

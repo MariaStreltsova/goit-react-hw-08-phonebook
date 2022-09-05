@@ -27,7 +27,7 @@ const UserMenu = () => {
         <Greeting> Hi, {user.name}</Greeting>
         <Button
           type="button"
-          variant="light"
+          variant="info"
           onClick={() => dispatch(authOperations.logOut())}
         >
           Log out
