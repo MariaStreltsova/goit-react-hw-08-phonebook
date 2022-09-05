@@ -8,6 +8,9 @@ export const ContactsTitle = styled.h2`
   font-weight: ${p => p.theme.fontWeights.bold};
 `;
 
+export const Name = styled.span`
+  margin-right: 215px;
+`;
 export const List = styled.ul`
   width: 600px;
   margin: 0;
@@ -15,6 +18,6 @@ export const List = styled.ul`
 
 export const ContactsListContainer = styled.div`
   display: flex;
-  justify-content: center;
+
   margin-top: ${p => p.theme.space[5]}px;
 `;

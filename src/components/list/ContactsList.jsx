@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import { ContactsTitle, List } from './ContactsList.styled';
+import { ContactsTitle, List, Name } from './ContactsList.styled';
 import {
   getVisibleContacts,
   // getIsLoading,
@@ -16,6 +16,7 @@ export const ContactList = () => {
       <ContactsTitle>Contacts list</ContactsTitle>
 
       <List>
+        <Name>Name</Name> <span>Phone</span>
         {contacts &&
           contacts.map(({ id, name, number }) => {
             return <Item key={id} id={id} name={name} number={number} />;
