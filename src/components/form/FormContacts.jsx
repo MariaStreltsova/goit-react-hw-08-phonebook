@@ -67,7 +67,7 @@ export const ContactsReviewForm = () => {
         </InputName>
 
         <SubmitButton type="submit" variant="info">
-          Add new contact
+          Add
         </SubmitButton>
       </Box>
     </Formik>

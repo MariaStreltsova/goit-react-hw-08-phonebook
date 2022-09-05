@@ -40,10 +40,11 @@ export const InputName = styled.label`
 export const SubmitButton = styled(Button)`
   display: flex;
   justify-content: center;
-  max-width: 200px;
+  width: 200px;
   padding: ${p => p.theme.space[3]}px;
   margin-top: ${p => p.theme.space[5]}px;
   margin-bottom: ${p => p.theme.space[4]}px;
   margin-left: auto;
   margin-right: auto;
+  font-weight: ${p => p.theme.fontWeights.bold};
 `;
