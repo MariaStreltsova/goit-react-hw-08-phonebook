@@ -46,5 +46,4 @@ export const SubmitButton = styled(Button)`
   margin-bottom: ${p => p.theme.space[4]}px;
   margin-left: auto;
   margin-right: auto;
-  font-weight: ${p => p.theme.fontWeights.bold};
 `;
