@@ -11,6 +11,11 @@ const ContactsContainer = styled.div`
   height: 699px;
   display: flex;
   justify-content: space-around;
+  background-image: linear-gradient(
+    to top,
+    rgba(213, 213, 224, 0.6),
+    rgba(213, 213, 224, 0.01)
+  );
 `;
 
 const ContactsPage = () => {

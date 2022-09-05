@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import { ContactsTitle, List, Name } from './ContactsList.styled';
+import { List, Name, ContactsTitle } from './ContactsList.styled';
 import {
   getVisibleContacts,
   // getIsLoading,
