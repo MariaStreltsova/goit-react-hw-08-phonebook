@@ -3,9 +3,15 @@ import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
-
+import { NavLink } from 'react-router-dom';
 const SignUpBtn = styled(Button)`
-  font-weight: ${p => p.theme.fontWeights.bold}; ;
+  font-weight: ${p => p.theme.fontWeights.bold};
+  margin-right: ${p => p.theme.space[3]}px;
+`;
+
+const Greeting = styled.div`
+  color: ${p => p.theme.colors.white};
+  margin-bottom: ${p => p.theme.space[5]}px;
 `;
 const Container = styled.div`
   min-height: 504px;
@@ -25,6 +31,13 @@ const Label = styled.label`
   flex-direction: column;
   margin-bottom: 15px;
   color: ${p => p.theme.colors.accentText};
+`;
+const Link = styled(NavLink)`
+  display: inline-block;
+  text-decoration: none;
+
+  font-weight: 700;
+  color: #2a363b;
 `;
 
 export default function Register() {
@@ -58,6 +71,10 @@ export default function Register() {
     <>
       <Container>
         <Form onSubmit={handleSubmit}>
+          <Greeting>
+            <h1>WELCOME</h1>
+            <p>to Phonebook</p>
+          </Greeting>
           <Label>
             Name{' '}
             <Input
@@ -91,6 +108,9 @@ export default function Register() {
           <SignUpBtn type="submit" variant="info">
             Sign up
           </SignUpBtn>
+          <Button type="button" variant="light">
+            <Link to="/login">Log in</Link>
+          </Button>
         </Form>
       </Container>
       {/* )} */}
