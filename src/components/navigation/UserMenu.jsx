@@ -1,20 +1,11 @@
 import { useDispatch } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import authOperations from 'redux/auth/auth-operations';
-import styled from 'styled-components';
+import { Avatar, Greeting } from './UserMenuStyled';
 import { useAuth } from 'hooks/useAuth';
 import { Box } from 'components/box';
 import defaultAvatar from './defaultAvatar.png';
 
-const Avatar = styled.img`
-  margin-right: 4px;
-`;
-
-const Greeting = styled.span`
-  font-weight: ${p => p.theme.fontWeights.bold};
-  margin-right: ${p => p.theme.space[4]}px;
-  color: ${p => p.theme.colors.accentText};
-`;
 const UserMenu = () => {
   const { user } = useAuth();
   const dispatch = useDispatch();

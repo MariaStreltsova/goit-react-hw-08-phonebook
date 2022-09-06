@@ -113,7 +113,6 @@ export default function Register() {
           </Button>
         </Form>
       </Container>
-      {/* )} */}
     </>
   );
 }

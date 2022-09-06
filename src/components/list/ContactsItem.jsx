@@ -9,7 +9,7 @@ import {
   DeleteButton,
   Wrapp,
 } from './ContactsItem.styled';
-import SpinnerBootstrap from 'components/Spinner/Spinner';
+import SpinnerBootstrap from 'components/Spinner1/Spinner';
 import CloseButton from 'react-bootstrap/CloseButton';
 
 export const Item = ({ id, name, number }) => {

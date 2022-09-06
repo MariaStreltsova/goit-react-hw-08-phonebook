@@ -1,20 +1,16 @@
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { List, Name, ContactsTitle } from './ContactsList.styled';
-import {
-  getVisibleContacts,
-  // getIsLoading,
-} from '../../redux/myContacts/contactsSelectors';
+import { getVisibleContacts } from '../../redux/myContacts/contactsSelectors';
 import { ContactsListContainer } from './ContactsList.styled';
-
 import { Item } from './ContactsItem';
+
 export const ContactList = () => {
   const contacts = useSelector(getVisibleContacts);
-  // const isLoading = useSelector(getIsLoading);
+
   return (
     <ContactsListContainer>
       <ContactsTitle>Contacts list</ContactsTitle>
-
       <List>
         <Name>Name</Name> <span>Phone</span>
         {contacts &&

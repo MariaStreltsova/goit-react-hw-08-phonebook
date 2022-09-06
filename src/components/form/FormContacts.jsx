@@ -1,8 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-
 import { Formik } from 'formik';
 import { nanoid } from 'nanoid';
-
 import {
   Box,
   Input,

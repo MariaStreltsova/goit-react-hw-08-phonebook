@@ -5,15 +5,15 @@ import Button from 'react-bootstrap/Button';
 export const Box = styled(Form)`
   display: flex;
   flex-direction: column;
-  background-color: rgba(217, 217, 217, 0.27);
+  background-color: ${p => p.theme.colors.background};
   height: 300px;
   padding: ${p => p.theme.space[4]}px;
-  margin-top: 32px;
+  margin-top: ${p => p.theme.space[5]}px;
   border-radius: ${p => p.theme.radii.normal};
 `;
 export const Heading = styled.h2`
   color: ${p => p.theme.colors.accentText};
-  text-shadow: 2px 4px rgba(0, 0, 0, 0.75);
+  text-shadow: ${p => p.theme.textShadow.standart};
   margin-left: auto;
   margin-right: auto;
 `;
@@ -24,12 +24,8 @@ export const Input = styled(Field)`
   padding: ${p => p.theme.space[2]}px;
   border-radius: ${p => p.theme.radii.normal};
   border: ${p => p.theme.borders.normal};
-
-  /* :hover,
-  :focus {
-    border: ${p => p.theme.borders.normal} ${p => p.theme.colors.accent}; */
-  /* } */
 `;
+
 export const InputName = styled.label`
   display: flex;
   flex-direction: column;

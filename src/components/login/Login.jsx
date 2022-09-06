@@ -1,45 +1,16 @@
 import { useDispatch } from 'react-redux';
 import authOperations from '../../redux/auth/auth-operations';
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
-
-const StyledButton = styled(Button)`
-  margin-right: ${p => p.theme.space[3]}px;
-`;
-const Form = styled.form`
-  width: 320px;
-
-  margin-left: 250px;
-  margin-top: 200px;
-`;
-const Input = styled.input`
-  width: 250px;
-  border-radius: ${p => p.theme.radii.normal};
-`;
-const Label = styled.label`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
-  color: ${p => p.theme.colors.accentText};
-`;
-const Link = styled(NavLink)`
-  display: inline-block;
-  text-decoration: none;
-
-  font-weight: 700;
-  color: #2a363b;
-`;
-const Container = styled.div`
-  min-height: 504px;
-
-`;
-
-const Greeting = styled.div`
-  color: ${p => p.theme.colors.white};
-  margin-bottom: ${p => p.theme.space[5]}px;
-`;
+import {
+  StyledButton,
+  Form,
+  Input,
+  Label,
+  Link,
+  Container,
+  Greeting,
+} from './LoginStyled';
 
 export default function Login() {
   const dispatch = useDispatch();

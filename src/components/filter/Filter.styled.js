@@ -3,11 +3,8 @@ import styled from 'styled-components';
 export const FilterContainer = styled.label`
   display: flex;
   flex-direction: column;
-
   margin-top: 24px;
-
   color: ${p => p.theme.colors.accentText};
-
   justify-content: center;
 `;
 

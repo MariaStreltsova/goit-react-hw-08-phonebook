@@ -2,12 +2,10 @@ import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
 
 export const ContactsItem = styled.li`
-  margin-left: 0;
+  margin-left: ${p => p.theme.space[0]}px;
   display: flex;
-
   flex-direction: row;
   justify-content: space-between;
-
   width: 100%;
 `;
 export const ItemWrap = styled.div`
@@ -28,7 +26,7 @@ export const Wrapp = styled.div`
   display: flex;
   height: 40px;
   padding: ${p => p.theme.space[2]}px;
-  padding-right: 0;
+  padding-right: ${p => p.theme.space[0]}px;
 
   background-color: ${p => p.theme.colors.white};
   border-radius: ${p => p.theme.radii.normal};

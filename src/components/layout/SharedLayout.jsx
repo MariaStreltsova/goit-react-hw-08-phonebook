@@ -10,11 +10,11 @@ const BackgroundContainer = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
 `;
-export const SharedLayout = () => {
+const SharedLayout = () => {
   return (
     <BackgroundContainer>
       <NavigationBar />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={null}>
         <Outlet />
       </Suspense>
       <GlobalStyle />
@@ -22,7 +22,5 @@ export const SharedLayout = () => {
   );
 };
 
+export default SharedLayout;
 //  maxWidth={1440} margin="0 auto" px={16}
-// https://ltdfoto.ru/images/2022/09/03/other-bloknot-ruchka-kniga-127240.jpg
-// https://mobimg.b-cdn.net/v3/fetch/fe/fe60b47090e616a0f7a60666f96c62f0.jpeg?w=1470&r=0.5625
-// https://mobimg.b-cdn.net/v3/fetch/9a/9a9783f4e5c344ec478b3472711498cf.jpeg?w=600&r=0.5625
