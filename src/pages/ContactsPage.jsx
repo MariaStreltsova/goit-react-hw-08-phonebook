@@ -25,6 +25,19 @@ const ContactsPage = () => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
+  const Message = styled.p`
+    width: fit-content;
+    margin: 0 auto;
+    font-size: ${p => p.theme.fontSizes.l};
+    font-weight: ${p => p.theme.fontWeights.bold};
+    color: ${p => p.theme.colors.white};
+    padding: ${p => p.theme.space[3]}px;
+    margin-top: ${p => p.theme.space[5]}px;
+    border-radius: ${p => p.theme.radii.normal};
+    opacity: 0.9;
+    background-color: rgba(217, 217, 217, 0.27);
+    text-shadow: 2px 3px rgba(0, 0, 0, 0.75);
+  `;
   return (
     <>
       {contacts.length !== 0 ? (
@@ -32,13 +45,18 @@ const ContactsPage = () => {
           <ContactsReviewForm />{' '}
           <div>
             <Filter />
-            <ContactList />{' '}
+
+            <ContactList />
           </div>
         </ContactsContainer>
       ) : (
         <ContactsContainer>
           {' '}
           <ContactsReviewForm />
+          <div>
+            <Filter />
+            <Message>There are no contacts</Message>
+          </div>
         </ContactsContainer>
       )}
     </>
