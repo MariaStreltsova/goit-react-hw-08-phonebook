@@ -1,44 +1,16 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
-import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
-import { NavLink } from 'react-router-dom';
-const SignUpBtn = styled(Button)`
-  font-weight: ${p => p.theme.fontWeights.bold};
-  margin-right: ${p => p.theme.space[3]}px;
-`;
-
-const Greeting = styled.div`
-  color: ${p => p.theme.colors.white};
-  margin-bottom: ${p => p.theme.space[5]}px;
-`;
-const Container = styled.div`
-  min-height: 504px;
-`;
-const Form = styled.form`
-  width: 320px;
-
-  margin-left: 250px;
-  margin-top: 200px;
-`;
-const Input = styled.input`
-  width: 250px;
-  border-radius: ${p => p.theme.radii.normal};
-`;
-const Label = styled.label`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
-  color: ${p => p.theme.colors.accentText};
-`;
-const Link = styled(NavLink)`
-  display: inline-block;
-  text-decoration: none;
-
-  font-weight: 700;
-  color: #2a363b;
-`;
+import {
+  SignUpBtn,
+  Greeting,
+  Container,
+  Form,
+  Input,
+  Label,
+  Link,
+} from './RegisterStyled';
 
 export default function Register() {
   const dispatch = useDispatch();
