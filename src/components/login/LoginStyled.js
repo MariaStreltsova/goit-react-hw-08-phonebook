@@ -29,7 +29,7 @@ export const Link = styled(NavLink)`
   color: #2a363b;
 `;
 export const Container = styled.div`
-  min-height: 504px;
+  min-height: 529px;
 `;
 
 export const Greeting = styled.div`

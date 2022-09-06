@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ContactsContainer = styled.div`
-  height: 699px;
+  height: 705px;
   display: flex;
   justify-content: space-around;
   background-image: linear-gradient(
