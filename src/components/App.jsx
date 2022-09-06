@@ -7,7 +7,7 @@ import SharedLayout from './layout/SharedLayout';
 import PublicRoute from './routes/PublicRoute';
 import PrivateRoute from './routes/PrivateRoute';
 import authOperations from 'redux/auth/auth-operations';
-import SpinnerBootstrap from './Spinner1/Spinner';
+import SpinnerBootstrap from './spinner/Spinner';
 
 const HomePage = lazy(() => import('pages/HomePage'));
 const RegisterPage = lazy(() => import('pages/auth-pages/RegisterPage'));
