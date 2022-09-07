@@ -12,7 +12,7 @@ export const Greeting = styled.div`
   margin-bottom: ${p => p.theme.space[5]}px;
 `;
 export const Container = styled.div`
-  height: 553px;
+  /* height: 553px; */
 `;
 export const Form = styled.form`
   width: 320px;
