@@ -6,7 +6,7 @@ import { getVisibleContacts } from 'redux/myContacts/contactsSelectors';
 import { Filter } from 'components/filter/Filter';
 import { ContactList } from '../components/list/ContactsList';
 import { ContactsReviewForm } from 'components/form/FormContacts';
-import { ContactsContainer, Message } from './PagesStyled';
+import { ContactsContainer, Message, Box } from './PagesStyled';
 import { useAuth } from 'hooks/useAuth';
 
 const ContactsPage = () => {
@@ -26,20 +26,20 @@ const ContactsPage = () => {
       {contacts.length !== 0 ? (
         <ContactsContainer>
           <ContactsReviewForm />{' '}
-          <div>
+          <Box>
             <Filter />
 
             <ContactList />
-          </div>
+          </Box>
         </ContactsContainer>
       ) : (
         <ContactsContainer>
           {' '}
           <ContactsReviewForm />
-          <div>
+          <Box>
             <Filter />
             <Message>There are no contacts</Message>
-          </div>
+          </Box>
         </ContactsContainer>
       )}
     </>

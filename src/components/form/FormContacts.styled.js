@@ -8,7 +8,7 @@ export const Box = styled(Form)`
   background-color: ${p => p.theme.colors.background};
   height: 300px;
   padding: ${p => p.theme.space[4]}px;
-  margin-top: ${p => p.theme.space[5]}px;
+
   border-radius: ${p => p.theme.radii.normal};
 `;
 export const Heading = styled.h2`

@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button';
 import {
   SignUpBtn,
   Greeting,
-  Container,
   Form,
   Input,
   Label,
@@ -41,50 +40,43 @@ export default function Register() {
 
   return (
     <>
-      <Container>
-        <Form onSubmit={handleSubmit}>
-          <Greeting>
-            <h1>WELCOME</h1>
-            <p>to Phonebook</p>
-          </Greeting>
-          <Label>
-            Name{' '}
-            <Input
-              type="text"
-              name="name"
-              value={name}
-              onChange={handleChange}
-            />
-          </Label>
+      <Form onSubmit={handleSubmit}>
+        <Greeting>
+          <h1>WELCOME</h1>
+          <p>to Phonebook</p>
+        </Greeting>
+        <Label>
+          Name{' '}
+          <Input type="text" name="name" value={name} onChange={handleChange} />
+        </Label>
 
-          <Label>
-            Email
-            <Input
-              type="email"
-              name="email"
-              value={email}
-              onChange={handleChange}
-            />
-          </Label>
+        <Label>
+          Email
+          <Input
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleChange}
+          />
+        </Label>
 
-          <Label>
-            Password
-            <Input
-              type="password"
-              name="password"
-              value={password}
-              onChange={handleChange}
-            />
-          </Label>
+        <Label>
+          Password
+          <Input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handleChange}
+          />
+        </Label>
 
-          <SignUpBtn type="submit" variant="info">
-            Sign up
-          </SignUpBtn>
-          <Button type="button" variant="light">
-            <Link to="/login">Log in</Link>
-          </Button>
-        </Form>
-      </Container>
+        <SignUpBtn type="submit" variant="info">
+          Sign up
+        </SignUpBtn>
+        <Button type="button" variant="light">
+          <Link to="/login">Log in</Link>
+        </Button>
+      </Form>
     </>
   );
 }

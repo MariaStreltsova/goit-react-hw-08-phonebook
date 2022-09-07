@@ -11,9 +11,7 @@ export const Greeting = styled.div`
   color: ${p => p.theme.colors.white};
   margin-bottom: ${p => p.theme.space[5]}px;
 `;
-export const Container = styled.div`
-  /* height: 553px; */
-`;
+
 export const Form = styled.form`
   width: 320px;
   margin-left: 250px;

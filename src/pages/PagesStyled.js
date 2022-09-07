@@ -1,14 +1,10 @@
 import styled from 'styled-components';
 
 export const ContactsContainer = styled.div`
-  height: 705px;
   display: flex;
   justify-content: space-around;
-  background-image: linear-gradient(
-    to top,
-    rgba(213, 213, 224, 0.6),
-    rgba(213, 213, 224, 0.01)
-  );
+
+  margin-top: ${p => p.theme.space[5]}px;
 `;
 export const Message = styled.p`
   width: fit-content;
@@ -22,4 +18,9 @@ export const Message = styled.p`
   opacity: 0.9;
   background-color: ${p => p.theme.colors.background};
   text-shadow: ${p => p.theme.textShadow.standart};
+`;
+export const Box = styled.div`
+  background-color: ${p => p.theme.colors.background};
+  padding: ${p => p.theme.space[4]}px;
+  border-radius: ${p => p.theme.radii.normal};
 `;
