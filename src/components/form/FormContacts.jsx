@@ -10,6 +10,7 @@ import {
 } from './FormContacts.styled';
 import { getItems } from '../../redux/myContacts/contactsSelectors';
 import { addContact } from 'redux/myContacts/contactsOperations';
+import { toast } from 'react-toastify';
 
 const idName = nanoid();
 const idNumber = nanoid();
@@ -22,7 +23,7 @@ export const ContactsReviewForm = () => {
     const contactsNames = items.map(items => items.name);
 
     if (contactsNames.includes(name)) {
-      alert(` ${name} is already in contacts.`);
+      toast.error(` ${name} is already in contacts.`);
     } else {
       const newPerson = {
         name,

@@ -44,7 +44,7 @@ const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     toast.info(`Bye, see you next time!`);
     token.unset();
   } catch (error) {
-    alert('Sorry, something went wrong');
+    toast.error('Sorry, something went wrong');
     return thunkAPI.rejectWithValue(error.message);
   }
 });
