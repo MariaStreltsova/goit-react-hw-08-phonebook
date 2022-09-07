@@ -22,50 +22,53 @@ export default function App() {
     dispatch(authOperations.fetchCurrentUser());
   }, [dispatch]);
 
-  return isRefreshing ? (
-    <SpinnerBootstrap />
-  ) : (
-    <Routes>
-      <Route path="/" element={<SharedLayout />}>
-        <Route
-          index
-          element={
-            <PublicRoute
-              restricted
-              redirectTo="/contacts"
-              component={<HomePage />}
-            />
-          }
-        />
-        <Route
-          path="/register"
-          element={
-            <PublicRoute
-              restricted
-              redirectTo="/contacts"
-              component={<RegisterPage />}
-            />
-          }
-        />
+  if (isRefreshing) {
+    return <SpinnerBootstrap />;
+  }
+  if (!isRefreshing) {
+    return (
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route
+            index
+            element={
+              <PublicRoute
+                restricted
+                redirectTo="/contacts"
+                component={<HomePage />}
+              />
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <PublicRoute
+                restricted
+                redirectTo="/contacts"
+                component={<RegisterPage />}
+              />
+            }
+          />
 
-        <Route
-          path="/login"
-          element={
-            <PublicRoute
-              restricted
-              redirectTo="/contacts"
-              component={<LoginPage />}
-            />
-          }
-        />
-        <Route
-          path="/contacts"
-          element={
-            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
-          }
-        />
-      </Route>
-      <Route path="*" element={<HomePage />} />
-    </Routes>
-  );
+          <Route
+            path="/login"
+            element={
+              <PublicRoute
+                restricted
+                redirectTo="/contacts"
+                component={<LoginPage />}
+              />
+            }
+          />
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+            }
+          />
+        </Route>
+        <Route path="*" element={<HomePage />} />
+      </Routes>
+    );
+  }
 }
